@@ -1,0 +1,51 @@
+<script type="text/javascript">
+	
+
+
+function calculateTotal(hand, who){
+	var ace = 0;
+	var total = 0; 
+	var cardValue = 0;
+	for(let i = 0 ; i < hand.length ; i ++){
+		// HANDLE THE FACE-CARDS
+		cardValue = Number(hand[i].slice(0,-1));
+			if(cardValue > 1) || (cardValue < 11){
+				total += cardValue;
+			}else if{
+				(cardValue > 10){
+					cardValue = 10;
+					total += 10;
+				}else{
+					ace++;
+					total +=11;
+				}
+			}
+		// cardValue = Number(hand[i].slice(0,-1));
+		total += cardValue;
+	}
+	if((total > 21) && (ace > 0)){
+		for(let i = 0; i < aces.length; i ++){
+			break;
+		}
+	}
+	// update the DOM with the new total 
+	var classSelector = '.'+who+'-total-number';
+	console.log(who);
+	$(classSelector).text(total);
+	return total;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
